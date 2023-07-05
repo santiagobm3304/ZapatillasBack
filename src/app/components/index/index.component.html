@@ -1,16 +1,9 @@
-<div class="container p-5">
-    <div class="row">
 
-            <div *ngFor="let prod of products" class="card col-md-4 mx-auto mt-2 mb-2" style="width: 16rem;" id="{{prod.id}}">
-                <img src="{{prod.image}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{prod.name}}</h5>
-                    <p class="card-text">{{prod.description}}</p>
-                    <a routerLink="/product/{{prod.id}}" class="btn btn-primary">Ver</a>
-                </div>
-            </div>
-        
+<div class="container p-5">
+<input class="form-control mb-3" type="text" placeholder="Buscar producto" #txtSearch (keyup)="onSearchProduct(txtSearch.value)">
+    <div class="row">
+        <div *ngFor="let product of products | filtroProduct:search" class="card col-md-4 mx-auto mt-2 mb-2" style="width: 16rem;">
+            <app-card-product [product]="product"></app-card-product>
+        </div>
     </div>
-    
-    
 </div>

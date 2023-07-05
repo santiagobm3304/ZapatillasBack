@@ -9,13 +9,19 @@ import { FormsModule } from '@angular/forms';
 import { IndexComponent } from './components/index/index.component';
 import { ProductComponent } from './components/product/product.component';
 import { GetProductsService } from './services/get-products.service';
+import { CardProductComponent } from './components/card-product/card-product.component';
+import { CartComponent } from './components/cart/cart.component';
+import { FiltroProductPipe } from './pipes/filtro-product.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     IndexComponent,
-    ProductComponent
+    ProductComponent,
+    CardProductComponent,
+    CartComponent,
+    FiltroProductPipe
   ],
   imports: [
     BrowserModule,

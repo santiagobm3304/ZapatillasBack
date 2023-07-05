@@ -1,0 +1,34 @@
+<div class="cart">
+    <div class="w-100 h-40 bg-dark">
+        <ng-container *ngIf="myProducts.length == 0; else allProducts">
+            <h1 style="color: white;">No hay productos en el Carrito</h1>
+        </ng-container>
+
+        <ng-template #allProducts>
+            <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody *ngFor="let prod of products">
+                  <tr *ngIf="myProducts.includes(prod.id)">
+                    <th scope="row"><img [src]="prod.image" alt=""></th>
+                    <td>{{prod.name}}</td>
+                    <td>{{prod.price}}</td>
+                    <td (click)="eliminarProduct(myProducts.indexOf(prod.id))"><i class="fa-sharp fa-solid fa-delete-left"
+                        style="color: white;"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            <div class="subtotal">
+                <h1 style="color: white;">Total: S/.{{total}}</h1>
+            </div>
+        </ng-template>
+
+    </div>
+
+</div>
