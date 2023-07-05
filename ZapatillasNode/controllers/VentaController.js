@@ -15,7 +15,8 @@ module.exports = {
         obj._id = req.body._id,
         obj.nroventa = req.body.nroventa,
         obj.nombre = req.body.nombre,
-        obj.pedido = re.body.pedido
+        obj.pedido = req.body.pedido,
+        obj.total = req.body.total
         obj.save()
         .then((obj)=>{
             res.json(obj);
@@ -40,7 +41,8 @@ module.exports = {
         obj._id = req.body._id,
         obj.nroventa = req.body.nroventa,
         obj.nombre = req.body.nombre,
-        obj.pedido = re.body.pedido
+        obj.pedido = re.body.pedido,
+        obj.total = req.body.total
         Model.updateOne({_id:val_id},obj)
         .then((obj)=>{
             res.json(obj);

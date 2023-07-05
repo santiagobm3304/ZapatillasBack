@@ -7,7 +7,8 @@ var modelSchema = new Schema({
     nroventa: {type:Number},
     nombre: {type:String},
     pedido: [],
-    fecha: {type: Date, default: Date.now}
+    fecha: {type: Date, default: Date.now},
+    total: {type:number}
 });
 
 var model = mongoose.model('Ventas',modelSchema,'Ventas');
